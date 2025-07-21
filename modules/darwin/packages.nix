@@ -39,11 +39,14 @@
       clang
       jdk # jdk21 at the moment
       luajit
+
+      # dotfiles
+      stow
     ];
 
   homebrew.enable = true;
   homebrew.onActivation.autoUpdate = true;
-  # homebrew.onActivation.cleanup = "zap";
+  homebrew.onActivation.cleanup = "zap";
 
   homebrew.brews = [
     "mas"
@@ -55,9 +58,10 @@
     "bettermouse"
     "keyboardcleantool"
     "orbstack"
-    "zen-browser"
+    "zen"
     "ghostty"
     "kopiaui"
+    "shottr"
   ];
 
   # Install apps from the Mac App Store (requires `mas` login)

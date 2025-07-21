@@ -8,9 +8,6 @@
   # Use trackpad silent clicking
   system.defaults.trackpad.ActuationStrength = 0;
 
-  # TODO Set mouse tracking speed
-  # system.defaults.".GlobalPreferences"."com.apple.mouse.scaling" = 0
-
   # Use a separate space for each display
   system.defaults.spaces.spans-displays = false;
 
@@ -78,7 +75,7 @@
   # Default to list view
   system.defaults.finder.FXPreferredViewStyle = "Nlsv";
   system.defaults.finder.NewWindowTarget = "Documents";
-  system.defaults.finder.QuitMenuItem = true;
+  system.defaults.finder.QuitMenuItem = false;
   system.defaults.finder.ShowPathbar = true;
   system.defaults.finder.ShowStatusBar = true;
   # Show the full path in the window title

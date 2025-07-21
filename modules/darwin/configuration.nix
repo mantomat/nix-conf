@@ -25,8 +25,8 @@
     ./system.nix
     ./fonts.nix
     ./packages.nix
-    ./dotfiles.nix
     ./launchd.nix
+    ./scripts.nix
   ];
 
 }

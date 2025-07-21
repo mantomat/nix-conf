@@ -19,5 +19,17 @@
       RunAtLoad = true;
       KeepAlive = false;
     };
+
+    battery.serviceConfig = {
+      Program = "/Applications/battery.app/Contents/MacOS/battery";
+      RunAtLoad = true;
+      KeepAlive = false;
+    };
+
+    shottr.serviceConfig = {
+      Program = "/Applications/Shottr.app/Contents/MacOS/Shottr";
+      RunAtLoad = true;
+      KeepAlive = false;
+    };
   };
 }
