@@ -22,7 +22,6 @@
       # system utilities
       # kopia-ui # not avalable on aarch64/darwin, temporarily installed via brew
       rclone
-      htop-vim
 
       # editors
       ripgrep

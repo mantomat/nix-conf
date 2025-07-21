@@ -26,7 +26,6 @@
     ./fonts.nix
     ./packages.nix
     ./launchd.nix
-    ./scripts.nix
   ];
 
 }
