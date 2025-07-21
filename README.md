@@ -15,8 +15,8 @@ $ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/ni
 
 3. Install `nix-darwin` and apply the configuration:
 ```bash
-$ nix run nix-darwin/master#darwin-rebuild -- build --flake .#mntmtt-mba
-$ darwin-rebuild switch --flake .#mntmtt-mba
+$ nix run nix-darwin/master#darwin-rebuild -- build --flake .#mantomat
+$ darwin-rebuild switch --flake .#mantomat
 ```
-Note: this command will also clone and symlink the `https://github.com/mntmtt/dotfiles` repository.
+Note: this command will also clone and symlink the `https://github.com/mantomat/dotfiles` repository.
 

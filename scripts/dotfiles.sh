@@ -11,7 +11,7 @@ if [ ! -d "$DOTFILES_DIR" ]; then
 fi
 
 echo "[dotfiles] Stowing dotfiles..."
-cd "$DOTFILES_DIR/stow"
+cd "$DOTFILES_DIR/home"
 stow --restow . --target="$HOME" # keep an eye on this line (especially --restow)
 
 echo "[dotfiles] Done."
