@@ -31,5 +31,11 @@
       RunAtLoad = true;
       KeepAlive = false;
     };
+
+    bitwarden.serviceConfig = {
+      Program = "/Applications/Bitwarden.app/Contents/MacOS/Bitwarden";
+      RunAtLoad = true;
+      KeepAlive = false;
+    };
   };
 }

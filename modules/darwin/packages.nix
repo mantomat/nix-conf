@@ -8,16 +8,19 @@
       # system-wide productivity
       raycast
       aerospace
-      chatgpt
-      obsidian
+
+      # social
       discord
 
-      # shell, terminal & CLI software
-      zsh
-      oh-my-posh
-      oh-my-zsh
+      # learning
+      # anki # marked as broken, temporarily installed via brew
+      obsidian
+
+      # terminal
       # ghostty # marked as broken, temporarily installed via brew
       tmux
+      oh-my-zsh
+      zsh-syntax-highlighting
 
       # system utilities
       # kopia-ui # not avalable on aarch64/darwin, temporarily installed via brew
@@ -60,7 +63,7 @@
     "zen"
     "ghostty"
     "kopiaui"
-    "shottr"
+    "anki"
   ];
 
   # Install apps from the Mac App Store (requires `mas` login)

@@ -26,6 +26,7 @@
     ./fonts.nix
     ./packages.nix
     ./launchd.nix
+    ./nix-zsh-paths.nix
   ];
 
 }
