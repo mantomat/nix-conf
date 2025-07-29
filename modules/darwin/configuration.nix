@@ -27,6 +27,7 @@
     ./packages.nix
     ./launchd.nix
     ./nix-zsh-paths.nix
+    ./scripts.nix
   ];
 
 }

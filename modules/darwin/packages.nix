@@ -41,6 +41,8 @@
       clang
       jdk # jdk21 at the moment
       luajit
+      cmake
+      kdePackages.qtbase
 
       # dotfiles
       stow

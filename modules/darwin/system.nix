@@ -1,4 +1,6 @@
 { ... }: {
+  system.primaryUser = "mantomat";
+
   # Don't produce that horror-like sound when turning on, please
   system.startup.chime = false;
 
