@@ -1,5 +1,5 @@
 {
-  description = "mntmtt's system configuration";
+  description = "mantomat's system configuration";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";

@@ -8,6 +8,7 @@
       # system-wide productivity
       raycast
       aerospace
+      appcleaner
 
       # social
       discord
@@ -38,11 +39,7 @@
       mercurial
       python313
       rustup
-      clang
-      jdk # jdk21 at the moment
       luajit
-      cmake
-      kdePackages.qtbase
 
       # dotfiles
       stow
