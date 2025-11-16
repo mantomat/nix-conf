@@ -9,6 +9,10 @@
       raycast
       aerospace
       appcleaner
+      mos
+
+      ffmpeg
+      tree
 
       # social
       discord
@@ -31,18 +35,18 @@
       ripgrep
       tree-sitter
       neovim
-      jetbrains.idea-ultimate
-      jetbrains.clion
+      vscode
 
       # development
       # TODO see if it's better to install these system-wide or to use nix dev environments
-      mercurial
       python313
       rustup
       luajit
 
       # dotfiles
       stow
+
+      typst
     ];
 
   homebrew.enable = true;
@@ -56,7 +60,6 @@
 
   homebrew.casks = [
     "battery"
-    "bettermouse"
     "keyboardcleantool"
     "orbstack"
     "zen"
@@ -68,5 +71,6 @@
   # Install apps from the Mac App Store (requires `mas` login)
   homebrew.masApps = {
     "Bitwarden" = 1352778147;
+    "WireGuard" = 1451685025;
   };
 }
