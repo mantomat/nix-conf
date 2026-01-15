@@ -20,6 +20,7 @@
       pyenv
       rclone
       ripgrep
+      restic
       rustup
       stow
       tmux
