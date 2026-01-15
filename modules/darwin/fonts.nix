@@ -1,8 +1,12 @@
 { pkgs, ... }: {
     fonts.packages = with pkgs; [
-        nerd-fonts.jetbrains-mono
         atkinson-hyperlegible
         atkinson-hyperlegible-next
         atkinson-hyperlegible-mono
+        font-awesome
+        nerd-fonts.jetbrains-mono
+        nerd-fonts.noto
+        roboto
+        source-sans-pro
     ];
 }

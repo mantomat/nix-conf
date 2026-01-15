@@ -1,71 +1,50 @@
 { pkgs, ... }: {
 
-  # Policy: if it's on nixpkgs, install it from there.
-  # Otherwise, install it from Brew.
-
-  environment.systemPackages =
-    with pkgs; [
-      # system-wide productivity
-      raycast
-      aerospace
-      appcleaner
-      mos
-
-      ffmpeg
-      tree
-
-      # social
-      discord
-
-      # learning
-      # anki # marked as broken, temporarily installed via brew
-      obsidian
-
-      # terminal
-      # ghostty # marked as broken, temporarily installed via brew
-      tmux
-      oh-my-zsh
-      zsh-syntax-highlighting
-
-      # system utilities
-      # kopia-ui # not avalable on aarch64/darwin, temporarily installed via brew
-      rclone
-
-      # editors
-      ripgrep
-      tree-sitter
-      neovim
-      vscode
-
-      # development
-      # TODO see if it's better to install these system-wide or to use nix dev environments
-      python313
-      rustup
-      luajit
-
-      # dotfiles
-      stow
-
-      typst
-    ];
-
   homebrew.enable = true;
   homebrew.onActivation.autoUpdate = true;
   homebrew.onActivation.cleanup = "zap";
 
+  environment.systemPackages =
+    with pkgs; [
+      aerospace
+      appcleaner
+      bat
+      ffmpeg
+      fzf
+      hunspell
+      luajit
+      neovim
+      nixpkgs-fmt
+      obsidian
+      oh-my-zsh
+      pyenv
+      raycast
+      rclone
+      ripgrep
+      rustup
+      stow
+      tmux
+      tree
+      tree-sitter
+      typst
+      typstyle
+      vscode
+      zsh-syntax-highlighting
+    ];
+
   homebrew.brews = [
-    "mas"
     "jenv"
+    "mas"
   ];
 
   homebrew.casks = [
     "battery"
+    "discord"
+    "ghostty"
     "keyboardcleantool"
+    "kopiaui"
     "orbstack"
     "zen"
-    "ghostty"
-    "kopiaui"
-    "anki"
   ];
 
   # Install apps from the Mac App Store (requires `mas` login)

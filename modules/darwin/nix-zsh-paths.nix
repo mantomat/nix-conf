@@ -1,7 +1,6 @@
 { pkgs, ... } :
 let
   ohMyZshPath = "${pkgs.oh-my-zsh}/share/oh-my-zsh";
-  zshAutoSuggestPath = "${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions";
   zshSyntaxHighlightPath = "${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting";
 
   zshPathsFile = pkgs.writeTextFile {

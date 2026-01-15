@@ -65,11 +65,7 @@
   system.defaults.dock.minimize-to-application = true;
   system.defaults.dock.show-recents = false;
   system.defaults.dock.tilesize = 48;
-  system.defaults.dock.persistent-apps = [
-    {
-      app = "/System/Applications/Launchpad.app";
-    }
-  ];
+  system.defaults.dock.persistent-apps = [ ];
 
   # Finder
   # Search in current folder by default

@@ -5,7 +5,7 @@
     kopia-ui.serviceConfig = {
       ProgramArguments = [ "/Applications/KopiaUI.app/Contents/MacOS/KopiaUI" ];
       RunAtLoad = true;
-      KeepAlive = true;
+      KeepAlive = false;
     };
 
     raycast.serviceConfig = {
@@ -32,10 +32,5 @@
       KeepAlive = false;
     };
 
-    mos.serviceConfig = {
-      ProgramArguments = [ "${pkgs.mos}/Applications/Mos.app/Contents/MacOS/Mos" ];
-      RunAtLoad = true;
-      KeepAlive = false;
-    };
   };
 }
