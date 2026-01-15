@@ -8,12 +8,6 @@
       KeepAlive = false;
     };
 
-    raycast.serviceConfig = {
-      ProgramArguments = [ "${pkgs.raycast}/Applications/Raycast.app/Contents/MacOS/Raycast" ];
-      RunAtLoad = true;
-      KeepAlive = false;
-    };
-
     aerospace.serviceConfig = {
       ProgramArguments = [ "${pkgs.aerospace}/Applications/Aerospace.app/Contents/MacOS/Aerospace" ];
       RunAtLoad = true;

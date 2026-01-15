@@ -1,0 +1,8 @@
+.DS_Store
+
+stow/.battery/battery.log
+stow/.battery/battery.pid
+stow/.battery/gui.log
+stow/.battery/visudo.tmp
+
+stow/.config/rclone/

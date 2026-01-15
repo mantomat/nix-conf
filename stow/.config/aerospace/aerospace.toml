@@ -1,0 +1,77 @@
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+accordion-padding = 10
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+key-mapping.preset = 'qwerty'
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+[gaps]
+inner.horizontal = 6
+inner.vertical = 6
+outer.left = 2
+outer.bottom = 2
+outer.top = 2
+outer.right = 2
+
+[mode.main.binding]
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+
+alt-shift-h = 'move left'
+alt-shift-j = 'move down'
+alt-shift-k = 'move up'
+alt-shift-l = 'move right'
+
+alt-ctrl-h = 'workspace prev'
+alt-ctrl-l = 'workspace next'
+
+alt-ctrl-shift-h = 'move-node-to-monitor left'
+alt-ctrl-shift-l = 'move-node-to-monitor right'
+
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
+
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-2 = 'move-node-to-workspace 2'
+alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-4 = 'move-node-to-workspace 4'
+alt-shift-6 = 'move-node-to-workspace 6'
+alt-shift-7 = 'move-node-to-workspace 7'
+alt-shift-8 = 'move-node-to-workspace 8'
+alt-shift-9 = 'move-node-to-workspace 9'
+
+shift-alt-f = 'fullscreen'
+
+ctrl-alt-left = 'workspace prev'
+ctrl-alt-right = 'workspace next'
+
+alt-a = 'layout tiles accordion'
+alt-f = 'layout tiling floating'
+
+alt-r = 'mode resize'
+alt-enter = 'mode launcher'
+
+[mode.launcher.binding]
+t = ['exec-and-forget open -a Ghostty', 'mode main']
+f = ['exec-and-forget open -a Finder', 'mode main']
+b = ['exec-and-forget open -a Zen', 'mode main']
+v = ['exec-and-forget open -a "Visual Studio Code"', 'mode main']
+c = ['exec-and-forget open -a Calendar', 'mode main']
+esc = 'mode main'
+
+[mode.resize.binding]
+h = 'resize width -50'
+j = 'resize height +50'
+k = 'resize height -50'
+l = 'resize width +50'
+enter = 'mode main'
+esc = 'mode main'

@@ -18,7 +18,6 @@
       obsidian
       oh-my-zsh
       pyenv
-      raycast
       rclone
       ripgrep
       rustup

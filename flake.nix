@@ -15,9 +15,8 @@ outputs = inputs@{ self, nix-darwin, nixpkgs }:
   in {
     darwinConfigurations.${hostname} = nix-darwin.lib.darwinSystem {
       modules = [
-        ./modules/darwin/configuration.nix
+        ./modules/configuration.nix
       ];
-
       specialArgs = { inherit self; };
     };
   };
