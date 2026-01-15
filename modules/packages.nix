@@ -18,7 +18,6 @@
       obsidian
       oh-my-zsh
       pyenv
-      rclone
       ripgrep
       restic
       rustup
@@ -42,7 +41,6 @@
     "discord"
     "ghostty"
     "keyboardcleantool"
-    "kopiaui"
     "orbstack"
     "zen"
   ];

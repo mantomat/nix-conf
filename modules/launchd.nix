@@ -2,12 +2,6 @@
 
   launchd.user.agents = {
 
-    kopia-ui.serviceConfig = {
-      ProgramArguments = [ "/Applications/KopiaUI.app/Contents/MacOS/KopiaUI" ];
-      RunAtLoad = true;
-      KeepAlive = false;
-    };
-
     aerospace.serviceConfig = {
       ProgramArguments = [ "${pkgs.aerospace}/Applications/Aerospace.app/Contents/MacOS/Aerospace" ];
       RunAtLoad = true;
