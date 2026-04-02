@@ -66,6 +66,7 @@ f = ['exec-and-forget open -a Finder', 'mode main']
 b = ['exec-and-forget open -a Zen', 'mode main']
 v = ['exec-and-forget open -a "Visual Studio Code"', 'mode main']
 c = ['exec-and-forget open -a Calendar', 'mode main']
+o = ['exec-and-forget open -a Obsidian', 'mode main']
 esc = 'mode main'
 
 [mode.resize.binding]

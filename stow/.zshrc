@@ -32,5 +32,3 @@ source $ZSH/oh-my-zsh.sh
 # Plugins
 source "$ZSH_SYNTAX_HIGHLIGHTING/zsh-syntax-highlighting.zsh"
 
-
-

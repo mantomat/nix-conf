@@ -9,9 +9,11 @@
       aerospace
       appcleaner
       bat
+      claude-code
       ffmpeg
       fzf
       hunspell
+      lazydocker
       luajit
       neovim
       nixpkgs-fmt
@@ -34,14 +36,18 @@
   homebrew.brews = [
     "jenv"
     "mas"
+    "plantuml"
+    "repomix"
   ];
 
   homebrew.casks = [
+    "anydesk"
     "battery"
     "discord"
     "ghostty"
     "keyboardcleantool"
     "orbstack"
+    "steam"
     "zen"
   ];
 
