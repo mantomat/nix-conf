@@ -12,6 +12,7 @@
       claude-code
       ffmpeg
       fzf
+      ghostty-bin
       hunspell
       lazydocker
       luajit
@@ -37,14 +38,12 @@
     "jenv"
     "mas"
     "plantuml"
-    "repomix"
   ];
 
   homebrew.casks = [
     "anydesk"
     "battery"
     "discord"
-    "ghostty"
     "keyboardcleantool"
     "orbstack"
     "steam"
