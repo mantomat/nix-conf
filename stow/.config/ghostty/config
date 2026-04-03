@@ -3,10 +3,11 @@ font-thicken = true
 
 command = /run/current-system/sw/bin/tmux new-session -A -s main
 
-window-colorspace = "display-p3"
+window-colorspace = display-p3
 
 confirm-close-surface = false
 
 macos-titlebar-style = hidden
 
-theme = Afterglow
+background-opacity = 1
+background = #24273A
