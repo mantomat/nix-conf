@@ -7,19 +7,58 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "base_keymap": "VSCode",
+  "agent": {
+    "dock": "left",
+    "favorite_models": [],
+    "single_file_review": true,
+    "model_parameters": [],
+  },
+  "git_panel": {
+    "dock": "right",
+  },
+  "outline_panel": {
+    "button": false,
+    "dock": "left",
+  },
+  "project_panel": {
+    "dock": "right",
+  },
+  "title_bar": {
+    "show_branch_icon": false,
+  },
+  "search": {
+    "include_ignored": true,
+  },
+  "use_smartcase_search": true,
+  "semantic_tokens": "combined",
+  "indent_guides": {
+    "enabled": false,
+  },
+  "sticky_scroll": {
+    "enabled": true,
+  },
+  "wrap_guides": [80, 100, 120],
+  "current_line_highlight": "gutter",
+  "agent_buffer_font_size": 14.0,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "auto_update": false,
+  "restore_on_startup": "last_session",
   "agent_servers": {
     "claude-acp": {
-      "type": "registry"
-    }
+      "type": "registry",
+    },
   },
   "tab_bar": {
     "show": false,
   },
   "collaboration_panel": {
+    "dock": "right",
     "button": false,
   },
-  "relative_line_numbers": "enabled",
+  "relative_line_numbers": "disabled",
   "vim": {
+    "toggle_relative_line_numbers": true,
     "use_smartcase_find": true,
   },
   "inlay_hints": {
@@ -40,10 +79,10 @@
   },
   "vim_mode": true,
   "ui_font_size": 16,
-  "buffer_font_size": 15,
+  "buffer_font_size": 14.0,
   "theme": {
     "mode": "system",
     "light": "Ayu Light",
-    "dark": "Serendipity Midnight Minimal",
+    "dark": "One Dark",
   },
 }

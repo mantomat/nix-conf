@@ -6,16 +6,34 @@
 // To see the default key bindings run `zed: open default keymap`
 // from the command palette.
 [
+  // panels
   {
     "context": "Workspace",
+    "unbind": {
+      "cmd-b": "workspace::ToggleLeftDock",
+      "alt-cmd-b": "workspace::ToggleRightDock",
+    },
     "bindings": {
-      // "shift shift": "file_finder::Toggle"
+      "cmd-b": "workspace::ToggleRightDock",
+      "alt-cmd-b": "workspace::ToggleLeftDock",
     },
   },
   {
-    "context": "Editor && vim_mode == insert",
+    "context": "Terminal",
     "bindings": {
-      // "j k": "vim::NormalBefore"
+      "ctrl-w k": "terminal_panel::ToggleFocus",
+    },
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "ctrl-w": [
+        "editor::DeleteToPreviousWordStart",
+        {
+          "ignore_newlines": false,
+          "ignore_brackets": false,
+        },
+      ],
     },
   },
 ]
