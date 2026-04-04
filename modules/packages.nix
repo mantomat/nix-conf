@@ -10,43 +10,34 @@
       appcleaner
       bat
       claude-code
+      direnv
       ffmpeg
       fzf
+      git
       ghostty-bin
-      hunspell
-      lazydocker
-      luajit
       neovim
-      nixpkgs-fmt
       obsidian
       oh-my-zsh
-      pyenv
+      orbstack
       ripgrep
       restic
-      rustup
       stow
       tmux
       tree
       tree-sitter
-      typst
-      typstyle
       vscode
+      zed-editor
       zsh-syntax-highlighting
     ];
 
   homebrew.brews = [
-    "jenv"
     "mas"
-    "plantuml"
   ];
 
   homebrew.casks = [
-    "anydesk"
     "battery"
     "discord"
     "keyboardcleantool"
-    "orbstack"
-    "steam"
     "zen"
   ];
 
