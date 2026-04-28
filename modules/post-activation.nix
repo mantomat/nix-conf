@@ -1,4 +1,5 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, ... }:
+{
 
   system.activationScripts.postActivation.text = ''
     TARGET_USER="${config.system.primaryUser}"

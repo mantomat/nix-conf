@@ -3,21 +3,43 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
 
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-outputs = inputs@{ self, nix-darwin, nixpkgs }:
-  # Build darwin flake using:
-  # $ darwin-rebuild build --flake .#mantomat
-  let hostname = "mantomat";
-  in {
-    darwinConfigurations.${hostname} = nix-darwin.lib.darwinSystem {
-      modules = [
-        ./modules/configuration.nix
-      ];
-      specialArgs = { inherit self; };
-    };
-  };
+  outputs =
+    {
+      self,
+      nix-darwin,
+      nixpkgs,
+      flake-utils,
+    }:
+    {
+
+      darwinConfigurations.system = nix-darwin.lib.darwinSystem {
+        modules = [
+          ./modules/configuration.nix
+        ];
+        specialArgs = { inherit self; };
+      };
+
+    }
+    // flake-utils.lib.eachDefaultSystem (
+      system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
+      {
+        formatter = pkgs.nixfmt-tree;
+
+        devShells.default = pkgs.mkShell {
+          packages = [
+            pkgs.nil
+            pkgs.nixd
+          ];
+        };
+      }
+    );
 }

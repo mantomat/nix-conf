@@ -7,6 +7,26 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+      },
+      "enable_lsp_tasks": true,
+    },
+  },
+  "edit_predictions": {
+    "provider": "copilot",
+  },
   "base_keymap": "VSCode",
   "agent": {
     "dock": "left",
@@ -25,8 +45,7 @@
     "dock": "right",
   },
   "title_bar": {
-    "show_branch_icon": false,
-  },
+    },
   "search": {
     "include_ignored": true,
   },
@@ -45,7 +64,16 @@
   "auto_update": false,
   "restore_on_startup": "last_session",
   "agent_servers": {
+    "github-copilot-cli": {
+      "favorite_config_option_values": {
+        "reasoning_effort": ["high"],
+      },
+      "type": "registry",
+    },
     "claude-acp": {
+      "type": "registry",
+    },
+    "github-copilot": {
       "type": "registry",
     },
   },
@@ -62,7 +90,9 @@
     "use_smartcase_find": true,
   },
   "inlay_hints": {
-    "enabled": true,
+    "toggle_on_modifiers_press": {
+      "alt": true,
+    },
   },
   "diagnostics": {
     "inline": {

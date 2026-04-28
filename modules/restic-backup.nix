@@ -76,7 +76,7 @@ in
       serviceConfig = {
         ProgramArguments = [ "${resticBackupLocal}/bin/restic-backup-local" ];
         StartInterval = 3600; # 1 hour
-        RunAtLoad = false;    # Don't run immediately on login, wait for timer
+        RunAtLoad = false; # Don't run immediately on login, wait for timer
         StandardOutPath = "/tmp/restic-local.log";
         StandardErrorPath = "/tmp/restic-local.err";
       };

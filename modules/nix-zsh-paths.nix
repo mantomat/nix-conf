@@ -1,4 +1,4 @@
-{ pkgs, ... } :
+{ pkgs, ... }:
 let
   ohMyZshPath = "${pkgs.oh-my-zsh}/share/oh-my-zsh";
   zshSyntaxHighlightPath = "${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting";
@@ -10,6 +10,7 @@ let
       export ZSH_SYNTAX_HIGHLIGHTING="${zshSyntaxHighlightPath}"
     '';
   };
-in {
+in
+{
   environment.etc."zsh/nix-zsh-paths".source = zshPathsFile;
 }
