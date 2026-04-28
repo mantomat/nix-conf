@@ -44,8 +44,7 @@
   "project_panel": {
     "dock": "right",
   },
-  "title_bar": {
-    },
+  "title_bar": {},
   "search": {
     "include_ignored": true,
   },
@@ -115,4 +114,5 @@
     "light": "Ayu Light",
     "dark": "One Dark",
   },
+  "load_direnv": "shell_hook",
 }
