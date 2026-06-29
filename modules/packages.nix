@@ -1,18 +1,5 @@
 { pkgs, ... }:
 {
-  # TODO: Remove this temporary fix once direnv > 2.37.1 is released
-  # or the upstream macOS test hang is resolved in nixpkgs.
-  nixpkgs.overlays = [
-    (final: prev: {
-      direnv = prev.direnv.overrideAttrs (
-        old:
-        prev.lib.optionalAttrs prev.stdenv.hostPlatform.isDarwin {
-          doCheck = false;
-        }
-      );
-    })
-  ];
-
   homebrew.enable = true;
   homebrew.onActivation.autoUpdate = true;
   homebrew.onActivation.cleanup = "uninstall";
@@ -39,7 +26,6 @@
     tree
     tree-sitter
     vscode
-    zed-editor
     zsh-syntax-highlighting
   ];
 
@@ -48,16 +34,15 @@
   ];
 
   homebrew.casks = [
-    "battery"
     "discord"
-    "ferdium"
     "keyboardcleantool"
     "zen"
+    "zed" # currently installed from homebrew since hydra fails build
   ];
 
-  # Install apps from the Mac App Store (requires `mas` login)
   homebrew.masApps = {
     "Bitwarden" = 1352778147;
     "WireGuard" = 1451685025;
+    "Goodnotes: AI Notes, Docs, PDF" = 1444383602;
   };
 }

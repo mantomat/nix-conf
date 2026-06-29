@@ -9,7 +9,7 @@ confirm-close-surface = false
 
 macos-titlebar-style = hidden
 
-background = #24273A
+background = #191919
 
 window-padding-y = 5
 window-padding-x = 5
