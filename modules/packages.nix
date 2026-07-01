@@ -26,6 +26,7 @@
     tree
     tree-sitter
     vscode
+    zed-editor
     zsh-syntax-highlighting
   ];
 
@@ -37,7 +38,6 @@
     "discord"
     "keyboardcleantool"
     "zen"
-    "zed" # currently installed from homebrew since hydra fails build
   ];
 
   homebrew.masApps = {

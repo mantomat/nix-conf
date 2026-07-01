@@ -24,9 +24,12 @@
   nix.gc = {
     automatic = true;
     options = "--delete-older-than 7d";
+    interval = {
+      Weekday = 0;
+      Hour = 3;
+      Minute = 0;
+    }; # weekly, Sunday 3am
   };
-
-  # Periodically deduplicate the Nix store
   nix.optimise.automatic = true;
 
   # Set Git commit hash for darwin-version.
@@ -36,7 +39,5 @@
   # $ darwin-rebuild changelog
   system.stateVersion = 6;
 
-  # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
-
 }
