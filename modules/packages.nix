@@ -8,12 +8,11 @@
     aerospace
     appcleaner
     bat
-    claude-code
     direnv
+    codex
     ffmpeg
     fzf
     git
-    github-copilot-cli
     ghostty-bin
     neovim
     obsidian
@@ -26,7 +25,6 @@
     tree
     tree-sitter
     vscode
-    zed-editor
     zsh-syntax-highlighting
   ];
 
@@ -37,6 +35,7 @@
   homebrew.casks = [
     "discord"
     "keyboardcleantool"
+    "zed" # hydra fails to build zed too frequently, installing it via homebrew
     "zen"
   ];
 
