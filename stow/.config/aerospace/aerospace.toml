@@ -65,12 +65,12 @@ alt-r = 'mode resize'
 alt-enter = 'mode launcher'
 
 [mode.launcher.binding]
-t = ['exec-and-forget open -a Ghostty', 'mode main']
-f = ['exec-and-forget open -a Finder', 'mode main']
-b = ['exec-and-forget open -a Zen', 'mode main']
-e = ['exec-and-forget open -a Zed', 'mode main']
-c = ['exec-and-forget open -a Calendar', 'mode main']
-o = ['exec-and-forget open -a Obsidian', 'mode main']
+t = ['exec-and-forget open -a Ghostty', 'mode main'] # terminal
+f = ['exec-and-forget open -a Finder', 'mode main'] # finder
+b = ['exec-and-forget open -a Zen', 'mode main'] # browser
+e = ['exec-and-forget open -a Zed', 'mode main'] # editor
+c = ['exec-and-forget open -a Calendar', 'mode main'] # calendar
+n = ['exec-and-forget open -a Bear', 'mode main'] # notes
 esc = 'mode main'
 
 [mode.resize.binding]

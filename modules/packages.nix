@@ -25,6 +25,7 @@
     tree
     tree-sitter
     vscode
+    zed-editor
     zsh-syntax-highlighting
   ];
 
@@ -35,7 +36,7 @@
   homebrew.casks = [
     "discord"
     "keyboardcleantool"
-    "zed" # hydra fails to build zed too frequently, installing it via homebrew
+    "steam"
     "zen"
   ];
 
