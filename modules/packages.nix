@@ -6,6 +6,7 @@
 
   environment.systemPackages = with pkgs; [
     aerospace
+    anki-bin
     appcleaner
     bat
     direnv

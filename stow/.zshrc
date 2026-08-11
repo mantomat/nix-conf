@@ -1,8 +1,8 @@
 export EDITOR=nvim
 
 # nix-darwin
-alias drs="nix flake update --flake /Users/mantomat/nix-conf && sudo darwin-rebuild switch --flake /Users/mantomat/nix-conf#system"
-alias ncg="sudo nix-collect-garbage"
+alias drs="sudo darwin-rebuild switch --flake /Users/mantomat/nix-conf#system"
+alias ncg="nix-collect-garbage -d && sudo nix-collect-garbage -d"
 
 # fzf
 source <(fzf --zsh)

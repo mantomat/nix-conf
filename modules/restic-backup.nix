@@ -100,7 +100,12 @@ in
     restic-local-prune = {
       serviceConfig = {
         ProgramArguments = [ "${resticPruneLocal}/bin/restic-prune-local" ];
-        StartCalendarInterval = [ { Hour = 2; Minute = 0; } ];
+        StartCalendarInterval = [
+          {
+            Hour = 2;
+            Minute = 0;
+          }
+        ];
         RunAtLoad = false;
         StandardOutPath = "/Users/${primaryUser}/Library/Logs/restic-local-prune.log";
         StandardErrorPath = "/Users/${primaryUser}/Library/Logs/restic-local-prune.err";
