@@ -1,5 +1,7 @@
 { pkgs, config, ... }:
 
+# This could be moved to host-specific config in the future
+
 let
   commonFlags = "--exclude-caches --one-file-system --verbose";
   primaryUser = config.system.primaryUser;

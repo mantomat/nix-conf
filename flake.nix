@@ -17,14 +17,14 @@
       flake-utils,
     }:
     {
-
-      darwinConfigurations.system = nix-darwin.lib.darwinSystem {
-        modules = [
-          ./modules/configuration.nix
-        ];
-        specialArgs = { inherit self; };
+      darwinConfigurations = {
+        "mantomat-mba" = nix-darwin.lib.darwinSystem {
+                modules = [
+                  ./hosts/mantomat-mba
+                ];
+                specialArgs = { inherit self; };
+              };
       };
-
     }
     // flake-utils.lib.eachDefaultSystem (
       system:

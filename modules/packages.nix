@@ -18,6 +18,7 @@
     neovim
     obsidian
     oh-my-zsh
+    openlogi
     orbstack
     ripgrep
     restic
