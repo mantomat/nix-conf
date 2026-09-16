@@ -19,11 +19,11 @@
     {
       darwinConfigurations = {
         "mantomat-mba" = nix-darwin.lib.darwinSystem {
-                modules = [
-                  ./hosts/mantomat-mba
-                ];
-                specialArgs = { inherit self; };
-              };
+          modules = [
+            ./hosts/mantomat-mba
+          ];
+          specialArgs = { inherit self; };
+        };
       };
     }
     // flake-utils.lib.eachDefaultSystem (

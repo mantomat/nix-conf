@@ -10,7 +10,6 @@
     appcleaner
     bat
     direnv
-    codex
     ffmpeg
     fzf
     git
@@ -37,6 +36,7 @@
   homebrew.casks = [
     "discord"
     "keyboardcleantool"
+    "nvidia-geforce-now"
     "steam"
     "zen"
   ];
