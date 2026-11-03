@@ -26,7 +26,13 @@
     tree-sitter
     vscode
     zed-editor
+    zotero
     zsh-syntax-highlighting
+  ];
+
+  # 2026-10 zotero currently uses firefox 140 -- allow it for now
+  nixpkgs.config.permittedInsecurePackages = [
+      "firefox-esr-140-bin-unwrapped-140.17.0esr"
   ];
 
   homebrew.brews = [
