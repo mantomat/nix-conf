@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to agents when working with code in this repository.
 
 ## Commands
 
@@ -30,17 +30,6 @@ This is a **nix-darwin** configuration for a single macOS machine (`aarch64-darw
 ### Module layout
 
 `modules/configuration.nix` is the root module — it imports every other module under `modules/`. Modules are split by concern:
-
-| File | Purpose |
-|---|---|
-| `packages.nix` | Nix packages + Homebrew (brews/casks/MAS apps) |
-| `system.nix` | macOS defaults, keyboard, dock, Finder, login |
-| `fonts.nix` | Font packages |
-| `network.nix` | Hostname and DNS |
-| `launchd.nix` | Launch agents (Aerospace, Battery, Bitwarden) |
-| `nix-zsh-paths.nix` | Writes nix store paths into `/etc/zsh/nix-zsh-paths` for `.zshrc` to source |
-| `post-activation.nix` | Runs `stow --restow` after every rebuild to re-link dotfiles |
-| `restic-backup.nix` | Backup shell scripts and scheduled launchd backup agents |
 
 ### Dotfiles (`stow/`)
 

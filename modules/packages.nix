@@ -9,6 +9,7 @@
     anki-bin
     appcleaner
     bat
+    codex
     direnv
     ffmpeg
     fzf
@@ -36,7 +37,6 @@
   ];
 
   homebrew.brews = [
-    "mas"
   ];
 
   homebrew.casks = [
@@ -47,9 +47,4 @@
     "zen"
   ];
 
-  homebrew.masApps = {
-    "Bitwarden" = 1352778147;
-    "WireGuard" = 1451685025;
-    "Goodnotes: AI Notes, Docs, PDF" = 1444383602;
-  };
 }
