@@ -904,11 +904,11 @@ binding = "Unassigned"
 id = "resetWindowSecondarySpan"
 
 [[hotkeys]]
-binding = "Option+Slash"
+binding = "Left Option+Slash"
 id = "resizeContainerPrimarySpan.shrink"
 
 [[hotkeys]]
-binding = "Option+Right Bracket"
+binding = "Left Option+Right Bracket"
 id = "resizeContainerPrimarySpan.grow"
 
 [[hotkeys]]
@@ -920,11 +920,11 @@ binding = "Unassigned"
 id = "resizeWindowPrimarySpan.grow"
 
 [[hotkeys]]
-binding = "Control+Option+Slash"
+binding = "Left Control+Left Option+Slash"
 id = "resizeWindowSecondarySpan.shrink"
 
 [[hotkeys]]
-binding = "Control+Option+Right Bracket"
+binding = "Left Control+Left Option+Right Bracket"
 id = "resizeWindowSecondarySpan.grow"
 
 [[hotkeys]]
