@@ -3,7 +3,9 @@
   nixpkgs.hostPlatform = "aarch64-darwin";
 
   imports = [
-    ../../modules/configuration.nix
+    ../../shared
     ./networking.nix
+    ./backup.nix
   ];
+
 }

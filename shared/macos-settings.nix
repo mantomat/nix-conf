@@ -5,7 +5,11 @@ let
     shortcuts:
     let
       entries = lib.mapAttrsToList (
-        id: settings: lib.escapeShellArgs [ id (lib.generators.toPlist { escape = true; } settings) ]
+        id: settings:
+        lib.escapeShellArgs [
+          id
+          (lib.generators.toPlist { escape = true; } settings)
+        ]
       ) shortcuts;
     in
     lib.optionalString (entries != [ ]) ''

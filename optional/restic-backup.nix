@@ -1,8 +1,12 @@
-{ pkgs, config, ... }:
-
-# This could be moved to host-specific config in the future
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 let
+  cfg = config.services.resticLocalBackup;
   commonFlags = "--exclude-caches --one-file-system --verbose";
   primaryUser = config.system.primaryUser;
 
@@ -38,12 +42,12 @@ let
 
     export RESTIC_PASSWORD_COMMAND="security find-generic-password -s restic-repo-local -w"
 
-    REPO="/Volumes/MantoKopia/restic"
+    REPO=${lib.escapeShellArg cfg.repository}
 
     # Only run if the drive is actually plugged in
     if [ -d "$REPO" ]; then
       echo "Starting Local Backup..."
-      restic -r "$REPO" backup /Users/${primaryUser}/Documents/ ${commonFlags}
+      restic -r "$REPO" backup ${commonFlags} -- ${lib.escapeShellArgs cfg.paths}
     else
       echo "Local repository not found. Skipping."
     fi
@@ -54,7 +58,7 @@ let
 
     export RESTIC_PASSWORD_COMMAND="security find-generic-password -s restic-repo-local -w"
 
-    REPO="/Volumes/MantoKopia/restic"
+    REPO=${lib.escapeShellArg cfg.repository}
 
     if [ -d "$REPO" ]; then
       echo "Pruning Local Repository..."
@@ -80,19 +84,46 @@ let
 
 in
 {
+  options.services.resticLocalBackup = {
+    repository = lib.mkOption {
+      type = lib.types.strMatching "/.*";
+      description = "Absolute path to the local Restic repository.";
+    };
+    paths = lib.mkOption {
+      type = lib.types.nonEmptyListOf (lib.types.strMatching "/.*");
+      description = "Absolute paths to back up.";
+    };
+    interval = lib.mkOption {
+      type = lib.types.ints.positive;
+      default = 3600;
+      description = "Seconds between scheduled backups.";
+    };
+    pruneTime = {
+      hour = lib.mkOption {
+        type = lib.types.ints.between 0 23;
+        default = 2;
+        description = "Local hour of the daily prune job.";
+      };
+      minute = lib.mkOption {
+        type = lib.types.ints.between 0 59;
+        default = 0;
+        description = "Minute of the daily prune job.";
+      };
+    };
+  };
 
-  environment.systemPackages = [
+  config.environment.systemPackages = [
     setupBackupSecrets
     resticBackupLocal
     resticPruneLocal
   ];
 
-  launchd.user.agents = {
+  config.launchd.user.agents = {
 
     restic-local = {
       serviceConfig = {
         ProgramArguments = [ "${resticBackupLocal}/bin/restic-backup-local" ];
-        StartInterval = 3600; # 1 hour
+        StartInterval = cfg.interval;
         RunAtLoad = false;
         StandardOutPath = "/Users/${primaryUser}/Library/Logs/restic-local.log";
         StandardErrorPath = "/Users/${primaryUser}/Library/Logs/restic-local.err";
@@ -104,8 +135,8 @@ in
         ProgramArguments = [ "${resticPruneLocal}/bin/restic-prune-local" ];
         StartCalendarInterval = [
           {
-            Hour = 2;
-            Minute = 0;
+            Hour = cfg.pruneTime.hour;
+            Minute = cfg.pruneTime.minute;
           }
         ];
         RunAtLoad = false;

@@ -1,7 +1,14 @@
 export EDITOR=nvim
 
 # nix-darwin
-alias drs="sudo darwin-rebuild switch --flake /Users/mantomat/nix-conf"
+function drs {
+  local zshrc="${ZDOTDIR:-$HOME}/.zshrc"
+  local repo_dir="${zshrc:A:h:h}"
+
+  sudo darwin-rebuild switch --flake "$repo_dir" &&
+    stow --dir="$repo_dir/stow" --target="$HOME" --restow .
+}
+
 alias ncg="nix-collect-garbage -d && sudo nix-collect-garbage -d"
 
 # fzf

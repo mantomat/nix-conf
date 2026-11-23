@@ -1,38 +1,63 @@
 # nix-conf MacOs Config
 
 ## Home, configuration and dotfiles
+
 1. Install the dependencies (git, etc.):
-    ```bash
-    $ xcode-select --install
-    ```
+
+   ```bash
+   $ xcode-select --install
+   ```
 
 2. Install Homebrew:
-    ```bash
-    $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    ```
+
+   ```bash
+   $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
 
 3. Install Nix:
-    ```bash
-    $ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | \
-      sh -s -- install
-    ```
+
+   ```bash
+   $ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | \
+     sh -s -- install
+   ```
 
 4. Load the ssh key or create one, then login to GitHub.
 
 5. Clone the nix-conf repo:
-    ```bash
-    $ git clone git@github.com:mantomat/nix-conf.git
-    ```
+
+   ```bash
+   $ git clone git@github.com:mantomat/nix-conf.git
+   $ cd nix-conf
+   ```
 
 6. Install `nix-darwin` and apply the configuration to your host:
-    ```bash
-    $ nix run nix-darwin/master#darwin-rebuild -- build --flake .
-    $ sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .
-    ```
+
+   ```bash
+   $ nix run nix-darwin/master#darwin-rebuild -- build --flake .
+   $ sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .
+   ```
+
+7. From the repo root, link the dotfiles as your user.
+
+   ```bash
+   $ stow --dir=stow --target="$HOME" --restow .
+   ```
+
+   If Stow reports conflicts, back up the conflicting files or merge their
+   contents into `stow/` before retrying. Open a new terminal to load `drs`.
+   For subsequent changes, `drs` switches the system and restows the dotfiles
+   after a successful switch.
 
 ## Backup
 
-In order to run the backups, setup the secrets:
+The MacBook's [backup configuration](hosts/mantomat-mba/backup.nix) sets the
+local Restic repository, the paths to back up, the interval in seconds, and the
+daily prune time. To enable backups on another host, import the
+[optional Restic module](optional/restic-backup.nix) and set its
+`services.resticLocalBackup` options.
+
+To set up the backup secrets, run:
+
 ```bash
 setup-backup-secrets
 ```

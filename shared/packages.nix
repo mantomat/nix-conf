@@ -47,4 +47,14 @@
     "zen"
   ];
 
+  programs.mas = {
+    enable = true;
+    update = true;
+    packages = {
+      Bear = 1091189122;
+      Bitwarden = 1352778147;
+      Xcode = 497799835;
+    };
+  };
+
 }

@@ -1,14 +1,25 @@
-{ pkgs, config, ... }:
 {
-
+  pkgs,
+  config,
+  lib,
+  ...
+}:
+{
   launchd.user.agents = {
 
-    drs.serviceConfig = {
-      ProgramArguments = [ "darwin-rebuild switch --flake /Users/${config.system.primaryUser}/nix-conf" ];
-      RunAtLoad = true;
-      KeepAlive = false;
-      StandardOutPath = "/Users/${config.system.primaryUser}/Library/Logs/drs.log";
-      StandardErrorPath = "/Users/${config.system.primaryUser}/Library/Logs/drs.err";
+    # Reapply the runtime keyboard mappings when the graphical session starts.
+    keyboard-remapping = lib.mkIf config.system.keyboard.enableKeyMapping {
+      serviceConfig = {
+        ProgramArguments = [
+          "/usr/bin/hidutil"
+          "property"
+          "--set"
+          (builtins.toJSON { UserKeyMapping = config.system.keyboard.userKeyMapping; })
+        ];
+        LimitLoadToSessionType = "Aqua";
+        RunAtLoad = true;
+        StandardOutPath = "/dev/null";
+      };
     };
 
     omniwm.serviceConfig = {
@@ -20,7 +31,11 @@
     };
 
     bitwarden.serviceConfig = {
-      ProgramArguments = [ "/Applications/Bitwarden.app/Contents/MacOS/Bitwarden" ];
+      ProgramArguments = [
+        "/usr/bin/open"
+        "-b"
+        "com.bitwarden.desktop"
+      ];
       RunAtLoad = true;
       KeepAlive = false;
       StandardOutPath = "/Users/${config.system.primaryUser}/Library/Logs/bitwarden.log";

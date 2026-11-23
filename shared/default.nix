@@ -2,13 +2,11 @@
 {
 
   imports = [
-    ./system.nix
+    ./macos-settings.nix
     ./fonts.nix
     ./packages.nix
-    ./launchd.nix
+    ./login-agents.nix
     ./nix-zsh-paths.nix
-    ./post-activation.nix
-    ./restic-backup.nix
   ];
 
   nixpkgs.config.allowUnfree = true;

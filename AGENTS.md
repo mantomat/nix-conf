@@ -29,15 +29,24 @@ This is a **nix-darwin** configuration that uses `stow` to manage mutable dotfil
 
 ### Module layout
 
-`modules/configuration.nix` is the root module — it imports every other module under `modules/`. Modules are split by concern:
+- Each `hosts/<name>/default.nix` defines the host and imports its shared and
+  host-specific configuration.
+- `shared/default.nix` imports the common modules, including
+  `shared/macos-settings.nix` for macOS preferences and
+  `shared/login-agents.nix` for launchd user agents.
+- Hosts import modules from `optional/` when they use a feature. The MacBook
+  opts into Restic through `hosts/mantomat-mba/backup.nix`.
 
 ### Dotfiles (`stow/`)
 
-All dotfiles live under `stow/` and are managed by GNU Stow. On every `darwin-rebuild switch`, `post-activation.nix` automatically runs `stow --restow . --target=$HOME` from that directory, so files symlink into `~` matching the directory structure under `stow/`.
+All dotfiles live under `stow/` and are managed by GNU Stow. The `drs` shell
+function restows the dotfiles as the current user after a successful
+`darwin-rebuild switch`. Follow the README on a fresh install to create
+the initial symlinks and load `drs`.
 
-To manually re-link dotfiles without a full rebuild:
+To update the symlinks from the repo root:
 ```bash
-cd ~/nix-conf/stow && stow --restow . --target="$HOME"
+stow --dir=stow --target="$HOME" --restow .
 ```
 
 ### Backup
