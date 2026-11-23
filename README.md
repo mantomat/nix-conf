@@ -30,17 +30,19 @@
    $ cd nix-conf
    ```
 
-6. Install `nix-darwin` and apply the configuration to your host:
+6. Build the MacBook configuration from `flake.lock` and apply it with the
+   `darwin-rebuild` that the build provides. For another Mac, use the name
+   of its entry in `darwinConfigurations`.
 
    ```bash
-   $ nix run nix-darwin/master#darwin-rebuild -- build --flake .
-   $ sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .
+   $ nix build .#darwinConfigurations.mantomat-mba.system
+   $ sudo ./result/sw/bin/darwin-rebuild switch --flake .
    ```
 
 7. From the repo root, link the dotfiles as your user.
 
    ```bash
-   $ stow --dir=stow --target="$HOME" --restow .
+   $ /run/current-system/sw/bin/stow --dir=stow --target="$HOME" --restow .
    ```
 
    If Stow reports conflicts, back up the conflicting files or merge their

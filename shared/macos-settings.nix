@@ -19,8 +19,6 @@ let
     '';
 in
 {
-  system.primaryUser = "mantomat";
-
   # Don't produce that horror-like sound when turning on, please
   system.startup.chime = false;
 
@@ -30,7 +28,7 @@ in
   };
 
   system.activationScripts.userDefaults.text = lib.mkAfter (setSymbolicHotKeys {
-    "64".enabled = false; # Show Spotlight search (⌘Space)
+    "64".enabled = false; # Spotlight search (⌘Space)
   });
 
   system.defaults = {

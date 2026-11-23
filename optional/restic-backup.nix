@@ -98,6 +98,7 @@ in
       default = 3600;
       description = "Seconds between scheduled backups.";
     };
+    startOnMount = lib.mkEnableOption "checking for the local backup repository when a filesystem mounts";
     pruneTime = {
       hour = lib.mkOption {
         type = lib.types.ints.between 0 23;
@@ -124,6 +125,7 @@ in
       serviceConfig = {
         ProgramArguments = [ "${resticBackupLocal}/bin/restic-backup-local" ];
         StartInterval = cfg.interval;
+        StartOnMount = cfg.startOnMount;
         RunAtLoad = false;
         StandardOutPath = "/Users/${primaryUser}/Library/Logs/restic-local.log";
         StandardErrorPath = "/Users/${primaryUser}/Library/Logs/restic-local.err";

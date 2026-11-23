@@ -1,0 +1,5 @@
+[tui]
+vim_mode_default = true
+
+[tui.keymap.chat]
+interrupt_turn = []
