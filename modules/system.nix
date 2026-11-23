@@ -11,8 +11,17 @@
   };
 
   system.defaults = {
-    # Use trackpad silent clicking
-    trackpad.ActuationStrength = 0;
+    trackpad = {
+      # Use trackpad silent clicking
+      ActuationStrength = 0;
+
+      # Disable trackpad gestures
+      TrackpadThreeFingerVertSwipeGesture = 0;
+      TrackpadFourFingerVertSwipeGesture = 0;
+      TrackpadFourFingerHorizSwipeGesture = 0;
+      TrackpadFourFingerPinchGesture = 0;
+      TrackpadThreeFingerHorizSwipeGesture = 0;
+    };
 
     # Use a separate space for each display
     spaces.spans-displays = false;
@@ -27,6 +36,17 @@
       IconType = 5;
       # Show all processes hierarchically
       ShowCategory = 101;
+    };
+
+    CustomUserPreferences = {
+      # Disable spotlight's `⌘ Space` shortcut
+      "com.apple.symbolichotkeys" = {
+        AppleSymbolicHotKeys = {
+          "64" = {
+            enabled = false;
+          };
+        };
+      };
     };
 
     NSGlobalDomain = {
@@ -72,8 +92,10 @@
 
     WindowManager = {
       EnableStandardClickToShowDesktop = false;
-      # No margins when tiling windows
       EnableTiledWindowMargins = false;
+      EnableTilingByEdgeDrag = false;
+      EnableTopTilingByEdgeDrag = false;
+      EnableTilingOptionAccelerator = false;
     };
 
     finder = {

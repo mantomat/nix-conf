@@ -12,3 +12,7 @@ stow/.config/github-copilot/
 stow/.config/zed/prompts/
 
 .direnv/
+
+# OmniWM regenerates its bundled shell and API definitions.
+stow/.config/omniwm/shell/default/
+stow/.config/omniwm/shell/omniwm.d.luau

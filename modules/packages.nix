@@ -5,7 +5,6 @@
   homebrew.onActivation.cleanup = "uninstall";
 
   environment.systemPackages = with pkgs; [
-    aerospace
     anki-bin
     appcleaner
     bat
@@ -18,6 +17,7 @@
     neovim
     obsidian
     oh-my-zsh
+    omniwm
     orbstack
     ripgrep
     restic
@@ -33,7 +33,7 @@
 
   # 2026-10 zotero currently uses firefox 140 -- allow it for now
   nixpkgs.config.permittedInsecurePackages = [
-      "firefox-esr-140-bin-unwrapped-140.17.0esr"
+    "firefox-esr-140-bin-unwrapped-140.17.0esr"
   ];
 
   homebrew.brews = [

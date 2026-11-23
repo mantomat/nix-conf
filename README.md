@@ -24,10 +24,10 @@
     $ git clone git@github.com:mantomat/nix-conf.git
     ```
 
-6. Install `nix-darwin` and apply the configuration:
+6. Install `nix-darwin` and apply the configuration to your host:
     ```bash
-    $ nix run nix-darwin/master#darwin-rebuild -- build --flake .#mantomat
-    $ sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .#mantomat
+    $ nix run nix-darwin/master#darwin-rebuild -- build --flake .
+    $ sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .
     ```
 
 ## Backup
@@ -36,4 +36,3 @@ In order to run the backups, setup the secrets:
 ```bash
 setup-backup-secrets
 ```
-

@@ -1,0 +1,33 @@
+
+[profiles]
+
+[profiles.default]
+center = ["active-window"]
+leading = ["apple-menu", "app-menu", "workspaces"]
+trailing = ["omniwm", "wifi", "battery-details", "control-center", "clock"]
+
+[profiles.default.hiddenBar]
+enabled = false
+
+[profiles.default.widgets]
+
+[profiles.default.widgets.active-window]
+display = "icon_and_text"
+
+[profiles.default.widgets.battery-details]
+percent = "inside"
+
+[profiles.default.widgets.clock]
+date = false
+icon = false
+
+[profiles.default.widgets.volume]
+step = 5.0
+
+[profiles.default.widgets.workspaces]
+compact = false
+indicator = "pills"
+occupiedBackground = false
+
+[profiles.default.workspaceBar]
+position = "overlappingMenuBar"
