@@ -1,4 +1,19 @@
-{ ... }:
+{ config, lib, ... }:
+let
+  primaryUser = lib.escapeShellArg config.system.primaryUser;
+  setSymbolicHotKeys =
+    shortcuts:
+    let
+      entries = lib.mapAttrsToList (
+        id: settings: lib.escapeShellArgs [ id (lib.generators.toPlist { escape = true; } settings) ]
+      ) shortcuts;
+    in
+    lib.optionalString (entries != [ ]) ''
+      /bin/launchctl asuser "$(/usr/bin/id -u -- ${primaryUser})" \
+        /usr/bin/sudo --user=${primaryUser} -- /usr/bin/defaults write \
+        com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add ${lib.concatStringsSep " " entries}
+    '';
+in
 {
   system.primaryUser = "mantomat";
 
@@ -9,6 +24,10 @@
     enableKeyMapping = true;
     remapCapsLockToEscape = true;
   };
+
+  system.activationScripts.userDefaults.text = lib.mkAfter (setSymbolicHotKeys {
+    "64".enabled = false; # Show Spotlight search (⌘Space)
+  });
 
   system.defaults = {
     trackpad = {
@@ -36,17 +55,6 @@
       IconType = 5;
       # Show all processes hierarchically
       ShowCategory = 101;
-    };
-
-    CustomUserPreferences = {
-      # Disable spotlight's `⌘ Space` shortcut
-      "com.apple.symbolichotkeys" = {
-        AppleSymbolicHotKeys = {
-          "64" = {
-            enabled = false;
-          };
-        };
-      };
     };
 
     NSGlobalDomain = {
