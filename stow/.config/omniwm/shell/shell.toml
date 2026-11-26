@@ -4,7 +4,7 @@
 [profiles.default]
 center = ["active-window"]
 leading = ["apple-menu", "app-menu", "workspaces"]
-trailing = ["omniwm", "wifi", "battery-details", "control-center", "clock"]
+trailing = ["omniwm", "wifi", "battery-details", "control-center", "clock", "system-stats"]
 
 [profiles.default.hiddenBar]
 enabled = false
@@ -30,4 +30,12 @@ indicator = "pills"
 occupiedBackground = false
 
 [profiles.default.workspaceBar]
+autoHide = false
+hideEmptyWorkspaces = false
 position = "overlappingMenuBar"
+showAccentHighlights = false
+showItemBackgrounds = false
+showLabels = false
+solidBlackBackground = false
+systemStatsButton = false
+transparentBackground = true

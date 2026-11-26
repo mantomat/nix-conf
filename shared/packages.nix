@@ -42,8 +42,6 @@
   homebrew.casks = [
     "discord"
     "keyboardcleantool"
-    "nvidia-geforce-now"
-    "steam"
     "zen"
   ];
 

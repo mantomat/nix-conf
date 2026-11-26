@@ -73,6 +73,8 @@ in
       # Show hidden files in the finder
       AppleShowAllFiles = true;
 
+      AppleEnableSwipeNavigateWithScrolls = true;
+
       NSAutomaticCapitalizationEnabled = false;
 
       NSDocumentSaveNewDocumentsToCloud = false;
